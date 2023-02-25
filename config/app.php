@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Dictaphone-to-email',
+    'name' => 'Dictaphone to Email',
 
     /*
     |--------------------------------------------------------------------------
@@ -67,6 +67,7 @@ return [
     */
 
     'providers' => [
+        Illuminate\Mail\MailServiceProvider::class,
         App\Providers\AppServiceProvider::class,
     ],
 

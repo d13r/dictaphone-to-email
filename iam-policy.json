@@ -1,0 +1,41 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::d13r-dictaphone-to-email/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "transcribe:StartTranscriptionJob",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "transcribe:DeleteTranscriptionJob",
+                "transcribe:GetTranscriptionJob"
+            ],
+            "Resource": [
+                "arn:aws:transcribe:eu-west-1:956547487034:transcription-job/dictaphone-to-email-*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendRawEmail"
+            ],
+            "Resource": [
+                "arn:aws:ses:eu-west-1:956547487034:identity/djm.me",
+                "arn:aws:ses:eu-west-1:956547487034:identity/dave.miller@maths.ox.ac.uk"
+            ]
+        }
+    ]
+}
